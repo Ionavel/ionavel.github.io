@@ -1,0 +1,38 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <div class="home-hero">
+        {{- with site.Params.homeInfoParams.imageUrl }}
+        <img class="home-hero-img" src="{{ . }}" alt="{{ site.Params.homeInfoParams.imageTitle | default site.Title }}"
+             width="150" height="150" loading="eager">
+        {{- end }}
+        <header class="entry-header">
+            <h1>{{ .Title | markdownify }}</h1>
+        </header>
+    </div>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
+
+<style>
+.home-hero {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.home-hero-img {
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.home-hero .entry-header h1 {
+    margin: 0;
+}
+</style>

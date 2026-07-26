@@ -1,0 +1,258 @@
+baseURL = "https://ionavel.github.io/"
+title = "Ionavel"
+theme = "PaperMod"
+
+# --- Idioma ---
+locale = "en-us"
+
+# --- Comportamiento de build ---
+enableRobotsTXT = true          # genera robots.txt
+buildDrafts = false             # no publicar borradores
+buildFuture = false             # no publicar posts con fecha futura
+buildExpired = false            # no publicar posts caducados
+enableEmoji = true              # permite emojis :rocket: en el contenido
+enableGitInfo = false           # true => usa la fecha del último commit git como lastmod
+pluralizeListTitles = false     # evita que Hugo pluralice títulos de sección automáticamente
+
+# --- Paginación ---
+[pagination]
+  pagerSize = 10                # posts por página
+
+# --- Minificado (recomendado en producción) ---
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# --- Salidas: la home necesita JSON para que funcione el BUSCADOR ---
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# =============================================================================
+#  MENÚ PRINCIPAL
+# =============================================================================
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 10
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/posts/"
+  weight = 20
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 30
+[[menu.main]]
+  identifier = "archives"
+  name = "Archive"
+  url = "/archives/"
+  weight = 40
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 50
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 60
+
+# =============================================================================
+#  PARÁMETROS DE PaperMod
+# =============================================================================
+[params]
+  env = "production"            # "production" activa analytics/SEO; "development" los desactiva
+  description = "Ionavel — cybersecurity, homelab, SDR & offensive security research."
+  keywords = ["cybersecurity", "hacking", "homelab", "SDR", "networking", "pentesting"]
+  author = "Ionavel"
+  # author = ["Me", "You"]     # <-- si algún día hay varios autores, usa lista
+  DateFormat = "2006-01-02"    # formato de fecha (sintaxis de fechas de Go)
+  defaultTheme = "auto"        # "auto" | "dark" | "light"  (auto = según el sistema del visitante)
+  # disableThemeToggle = true  # <-- descomenta para FORZAR un tema y quitar el botón sol/luna
+
+  # -- Texto de bienvenida en la home (modo "homeInfoParams") --
+  [params.homeInfoParams]
+    Title = "Hi, I'm Ionavel 👋"
+    imageUrl = "/avatar.png"
+    imageTitle = "Ionavel"
+    Content = """
+Cybersecurity student focused on offensive & defensive security.
+I break, build and document things.
+"""
+  # ---- Botones/funciones de lectura (déjalos, dan buena UX) ----
+  ShowReadingTime = true            # tiempo estimado de lectura
+  ShowWordCount = false             # <-- número de palabras (descomenta a true si lo quieres)
+  ShowShareButtons = true           # botones de compartir al final del post
+  ShowPostNavLinks = true           # navegación anterior/siguiente entre posts
+  ShowBreadCrumbs = true            # migas de pan (Home > Sección > Post)
+  ShowCodeCopyButtons = true        # botón "copiar" en bloques de código (clave para writeups)
+  ShowRssButtonInSectionTermList = true
+  ShowToc = false                   # tabla de contenidos global. Mejor activarla por post
+  TocOpen = false                   # si la ToC arranca desplegada
+  ShowFullTextinRSS = true          # RSS con texto completo
+  UseHugoToc = true                 # usa el generador de ToC nativo de Hugo
+
+  # ---- Ocultar cosas (todas desactivadas = se muestran) ----
+  # hideMeta = true            # <-- oculta fecha/autor/tiempo de lectura
+  # hideSummary = true         # <-- oculta el resumen en los listados
+  # disableSpecial1stPost = true   # <-- quita el trato especial al primer post de la home
+  # disableScrollToTop = true      # <-- quita el botón de "subir arriba"
+  # disableAnchoredHeadings = true # <-- quita los enlaces ancla en los títulos
+  # comments = true            # <-- activa comentarios (requiere plantilla propia)
+
+  # ---------------------------------------------------------------------------
+  #  ICONOS/ENLACES SOCIALES  —  aquí van tus links.
+  #  GitHub activo. El RESTO comentados: descoméntalos y pon la URL cuando decidas.
+  #  Iconos disponibles: themes/PaperMod/assets/svg.json
+  # ---------------------------------------------------------------------------
+  [[params.socialIcons]]
+    name = "github"
+    title = "GitHub"
+    url = "https://github.com/Ionavel"
+
+   [[params.socialIcons]]
+     name = "linkedin"
+     title = "LinkedIn"
+     url = "https://www.linkedin.com/in/m-v-m1/"
+
+   [[params.socialIcons]]
+     name = "x"
+     title = "X / Twitter"
+     url = "https://x.com/Ionavelum"
+  # [[params.socialIcons]]
+  #   name = "mastodon"
+  #   title = "Mastodon"
+  #   url = "https://infosec.exchange/@Ionavel"        # <-- PENDIENTE
+  # [[params.socialIcons]]
+  #   name = "email"
+  #   title = "Email"
+  #   url = "mailto:tu@correo.com"                     # <-- PENDIENTE
+  # [[params.socialIcons]]
+  #   name = "telegram"
+  #   url = "https://t.me/Ionavel"                     # <-- PENDIENTE
+  # [[params.socialIcons]]
+  #   name = "discord"
+  #   url = "https://discord.com/users/XXXX"           # <-- PENDIENTE
+  # -- Perfiles técnicos (badges potentes para tu perfil offsec) --
+  # [[params.socialIcons]]
+  #   name = "hackthebox"                              # si el icono no existe, usa "link"
+  #   title = "Hack The Box"
+  #   url = "https://app.hackthebox.com/profile/XXXX"  # <-- PENDIENTE
+  # [[params.socialIcons]]
+  #   name = "tryhackme"
+  #   title = "TryHackMe"
+  #   url = "https://tryhackme.com/p/Ionavel"          # <-- PENDIENTE
+  # -- RSS del propio sitio --
+  # [[params.socialIcons]]
+  #   name = "rss"
+  #   title = "RSS"
+  #   url = "index.xml"
+
+  # ---------------------------------------------------------------------------
+  #  FAVICONS / ASSETS  —  pon los archivos en static/ y descomenta lo que uses.
+  #  Genera el set en https://realfavicongenerator.net/
+  # ---------------------------------------------------------------------------
+  [params.assets]
+   favicon = "/favicon.ico"
+   favicon16x16 = "/favicon-16x16.png"
+   favicon32x32 = "/favicon-32x32.png"
+   apple_touch_icon = "/apple-touch-icon.png"
+   disableHLJS = true
+  # ---------------------------------------------------------------------------
+  #  LABEL  —  logo/texto de la barra superior (izquierda)
+  # ---------------------------------------------------------------------------
+  [params.label]
+    text = "Ionavel"
+    # icon = "/apple-touch-icon.png"   # <-- icono en vez de/junto al texto
+    # iconHeight = 35
+
+  # ---------------------------------------------------------------------------
+  #  HOME: modo alternativo PERFIL (avatar grande + botones).
+  #  Está activo el modo texto (homeInfoParams, arriba). Para usar este,
+  #  descomenta esto e ignora homeInfoParams.
+  # ---------------------------------------------------------------------------
+  # [params.profileMode]
+  #   enabled = true
+  #   title = "Ionavel"
+  #   subtitle = "Cybersecurity · Homelab · SDR · Offensive Security"
+  #   imageUrl = "/avatar.png"        # <-- avatar en static/
+  #   imageTitle = "Ionavel"
+  #   imageWidth = 120
+  #   imageHeight = 120
+  #   [[params.profileMode.buttons]]
+  #     name = "Projects"
+  #     url = "/projects/"
+  #   [[params.profileMode.buttons]]
+  #     name = "Blog"
+  #     url = "/posts/"
+  # ---------------------------------------------------------------------------
+  #  COVER  —  imagen de portada de posts (se pone por post en su frontmatter)
+  # ---------------------------------------------------------------------------
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+    # responsiveImages = true
+    # linkFullImages = true
+
+  # ---------------------------------------------------------------------------
+  #  EDIT POST  —  enlace "editar esta página" hacia tu repo (opcional)
+  # ---------------------------------------------------------------------------
+  # [params.editPost]
+  #   URL = "https://github.com/Ionavel/Ionavel.github.io/tree/main/content"   # <-- PENDIENTE
+  #   Text = "Suggest changes"
+  #   appendFilePath = true
+
+  # ---------------------------------------------------------------------------
+  #  BUSCADOR  —  opciones de Fuse.js. Requiere outputs.home con "JSON" + content/search.md
+  # ---------------------------------------------------------------------------
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    # limit = 10
+    keys = ["title", "permalink", "summary", "content"]
+
+  # ---------------------------------------------------------------------------
+  #  ANALÍTICA  —  desactivada. Descomenta e introduce tu ID si algún día la quieres.
+  # ---------------------------------------------------------------------------
+  # [params.analytics]
+  #   [params.analytics.google]
+  #     SiteVerificationTag = "XXXX"
+  #   [params.analytics.bing]
+  #     SiteVerificationTag = "XXXX"
+  #   [params.analytics.yandex]
+  #     SiteVerificationTag = "XXXX"
+
+# =============================================================================
+#  MARKUP  —  resaltado de sintaxis del código (clave para writeups técnicos)
+# =============================================================================
+[markup]
+  [markup.highlight]
+    noClasses = false          # false => usa clases CSS (necesario para que el tema controle el estilo)
+    # anchorLineNos = true
+    codeFences = true          # resalta bloques ```lenguaje
+    guessSyntax = true         # adivina el lenguaje si no lo indicas
+    lineNos = false            # números de línea globales (mejor por bloque)
+    style = "monokai"          # tema de color del código: monokai, dracula, github-dark, nord...
+  [markup.goldmark.renderer]
+    unsafe = true              # permite HTML embebido en Markdown (algunos shortcodes/imágenes)
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+# =============================================================================
+#  TAXONOMÍAS
+# =============================================================================
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"            # útil para agrupar writeups de una misma serie (ej: "HTB Season")
