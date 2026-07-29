@@ -60,6 +60,11 @@ pluralizeListTitles = false     # evita que Hugo pluralice títulos de sección 
   name = "Tags"
   url = "/tags/"
   weight = 60
+[[menu.main]]
+  identifier = "writeups"
+  name = "Writeups"
+  url = "/writeups/"
+  weight = 15
 
 # =============================================================================
 #  PARÁMETROS DE PaperMod
