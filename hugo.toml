@@ -70,6 +70,7 @@ pluralizeListTitles = false     # evita que Hugo pluralice títulos de sección 
 #  PARÁMETROS DE PaperMod
 # =============================================================================
 [params]
+  mainSections = ["posts", "writeups", "projects"]
   env = "production"            # "production" activa analytics/SEO; "development" los desactiva
   description = "Ionavel — cybersecurity, homelab, SDR & offensive security research."
   keywords = ["cybersecurity", "hacking", "homelab", "SDR", "networking", "pentesting"]
@@ -100,6 +101,7 @@ I break, build and document things.
   TocOpen = false                   # si la ToC arranca desplegada
   ShowFullTextinRSS = true          # RSS con texto completo
   UseHugoToc = true                 # usa el generador de ToC nativo de Hugo
+
 
   # ---- Ocultar cosas (todas desactivadas = se muestran) ----
   # hideMeta = true            # <-- oculta fecha/autor/tiempo de lectura
