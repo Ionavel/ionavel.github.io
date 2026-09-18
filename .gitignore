@@ -6,3 +6,9 @@ hugo.tar.gz
 hugo
 tools/
 Makefile
+
+# Posts de prueba locales (draft: true; no vienen del vault, --prune los borra)
+/content/posts/mermaid-test/
+/content/posts/callouts-test/
+# Config del preview de Claude Code (local)
+/.claude/

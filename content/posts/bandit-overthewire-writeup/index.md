@@ -2,7 +2,8 @@
 title: "OverTheWire: Bandit — Write-up (Levels 0–33)"
 date: 2023-09-19
 draft: false
-tags: ["ctf", "overthewire", "bandit", "linux"]
+tags: ["ctf", "overthewire", "bandit", "linux", "writeup"]
+aliases: ["/writeups/bandit-overthewire-writeup/"]   # URL antigua: Hugo genera un redirect
 summary: "Full walkthrough of the OverTheWire Bandit wargame."
 showToc: true 
 ---
@@ -242,11 +243,11 @@ bandit8@bandit:~$ cat data.txt | sort | uniq -u
 The password is in `data.txt`, in one of the human-readable strings, preceded by several `=` characters:
 
 ```
-bandit9@bandit:~$ strings data.txt | grep "<mark>"
-4</mark>======<mark> the#
-</mark>======<mark> password
-</mark>======<mark> is
-</mark>======== [REDACTED]
+bandit9@bandit:~$ strings data.txt | grep "=="
+4========== the#
+========== password
+========== is
+========== [REDACTED]
 ```
 
 The `strings` command lists printable character chains, and `grep` filters those containing two or more `=` characters.

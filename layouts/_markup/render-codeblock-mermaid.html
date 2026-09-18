@@ -1,0 +1,6 @@
+{{- /* Render hook de Hugo para ```mermaid: emite el código sin resaltar y marca la
+       página para que extend_head.html cargue Mermaid solo donde hace falta. */ -}}
+{{- .Page.Store.Set "hasMermaid" true -}}
+<pre class="mermaid">
+{{- .Inner | htmlEscape | safeHTML -}}
+</pre>

@@ -95,7 +95,7 @@ With that set, I build. I add `SKIPQT=1` because I don't use the graphical part 
 ```
 ionavel ~/proxmark3 master ❯ make clean && make -j$(nproc) SKIPQT=1
 
-=================================================================<mark>
+===================================================================
 Version info:      Iceman/master/v4.21611-604-g53b4e2095
 Platform name:     Proxmark3 GENERIC
 PLATFORM:          PM3GENERIC
@@ -103,7 +103,7 @@ PLATFORM_FPGA:     xc2s30
 PLATFORM_SIZE:     512
 Platform extras:   FLASH
 Standalone mode:   LF_SAMYRUN
-</mark>=================================================================
+===================================================================
 ```
 
 The important thing to check here is `Platform name: Proxmark3 GENERIC`. If it still says RDV4, go back and fix the Makefile before flashing.
